@@ -4,7 +4,9 @@
   "description": "",
   "main": "dist/bot.js",
   "scripts": {
-    "start": "rimraf dist && npx tsc && node ."
+    "build": "tsc",
+    "start": "node .",
+    "dev": "tsx watch src/bot.ts"
   },
   "keywords": [],
   "author": "",
