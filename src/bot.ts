@@ -1,6 +1,7 @@
 import { Client, GatewayIntentBits, Partials } from "discord.js";
 import "dotenv/config";
 import ready from "./events/ready";
+import dns from "dns";
 import { connectDB } from "./utils/database";
 import interactionCreate from "./events/interactionCreate";
 import verificationHandler from "./handlers/verificationHandler";
@@ -11,6 +12,8 @@ import TrainingProgram from "./handlers/TrainingProgram";
 import Examination from "./handlers/Examination";
 
 console.log("Bot is starting...");
+
+dns.setServers(["0.0.0.0", "1.1.1.1"]);
 
 const client = new Client({
   partials: [
